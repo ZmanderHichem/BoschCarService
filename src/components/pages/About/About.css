@@ -1,0 +1,68 @@
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    margin-bottom: 100px;
+
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+    
+  }
+  
+h2 {
+margin-bottom: 40px;
+
+}
+
+  .image {
+    flex: 1;
+    cursor: pointer;
+  }
+  
+  .image img {
+    max-width: 400px;
+    max-height: 300px;
+  }
+  
+  .image-left {
+    order: 1;
+  }
+  
+  .description-left {
+
+    order: -1;
+  
+    transition-duration: 1s;
+    transition-delay: 0.5s;
+  }
+
+  .image-Right {
+
+    order: -1;
+
+  }
+  .description-Right {
+    order: 1;
+  }
+
+  .description-left:hover {
+   margin-left: 50px;
+
+  }
+ 
+  
+
+  
+  /* Styles pour l'inversion (image à droite, description à gauche) */
+  .description-left {
+    flex-direction: row-reverse;
+  }
+  
+
+  

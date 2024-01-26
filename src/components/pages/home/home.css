@@ -1,0 +1,25 @@
+.limite-marquee {
+    background-color: #0a15e3;
+    max-height: 25px;
+    overflow: hidden; /* Ajout de cette propriété pour cacher le dépassement du contenu */
+}
+
+.scrolling-text {
+    white-space: nowrap;
+    max-height: 20px;
+    overflow: hidden;
+}
+
+.marquee-text {
+    animation: marquee 30s linear infinite;
+    display: inline-block; /* Ajout de cette propriété pour permettre le défilement horizontal */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

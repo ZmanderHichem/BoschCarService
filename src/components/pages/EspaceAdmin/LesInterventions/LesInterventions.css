@@ -1,0 +1,35 @@
+/* Ajoutez ces styles à votre fichier CSS pour personnaliser les cartes de service */
+.card {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    color: #555;
+  }
+  div {
+    margin: 20px;
+  }
+  
+  p {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  p:hover {
+    background-color: #f0f0f0;
+  }

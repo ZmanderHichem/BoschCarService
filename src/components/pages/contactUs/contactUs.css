@@ -1,0 +1,24 @@
+
+  .contact-section {
+    margin-left: 100px;
+    margin-top: 70px;
+    display: flex;
+    height: 100px;
+  }
+  
+  .contact-info {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .contact-image {
+    margin-right: 100px;
+    flex: 1;
+  }
+  .location{
+    margin-left: auto;
+
+    margin-top: 330px;
+  }
+  /* Ajoutez d'autres styles selon vos besoins */
+  
