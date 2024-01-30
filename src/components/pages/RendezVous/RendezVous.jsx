@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { collection, addDoc } from 'firebase/firestore';
 import './RendezVous.css';
-import Header from '../../Header';
+import Header from '../Headers/Header';
 import emailjs from 'emailjs-com';
 import { firestore } from '../../../firebase/configFirebase';
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getFirestore, collection, doc, setDoc } from 'firebase/firestore';
 
 import { firestore } from '../../../../firebase/configFirebase';
-import Header from '../../../Header';
+import AdminHeader from '../../Headers/AdminHeader/AdminHeader';
 
 const AjouterService = () => {
   const ajouterService = (event) => {
@@ -41,11 +41,11 @@ const AjouterService = () => {
 
   return (
     <div>
-            <Header />
+            <AdminHeader />
 
 
     <div>
-      <h1>Ajouter un nouveau service</h1>
+      <h2>Ajouter un nouveau service</h2>
       {/* Formulaire pour ajouter un service */}
       <form id="serviceForm">
         <label htmlFor="immatriculation">Immatriculation :</label>

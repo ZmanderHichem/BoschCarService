@@ -3,6 +3,7 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail } from 'firebase/auth';
 import { getFirestore, db } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';  // Import the storage service
+import { getDatabase } from 'firebase/database';
 
 const firebaseConfig = {  apiKey: "AIzaSyBcQeMCFinG14e9CI3Ysvf23MA1-YIP6SI",
   authDomain: "projet-personnel-e7b43.firebaseapp.com",
@@ -19,5 +20,6 @@ const auth = getAuth(app);
 const firestore = getFirestore(app);
 export const storage = getStorage(app);  // Export the storage service
 
+const database = getDatabase(app);
 
-export { auth,  getFirestore, firestore, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail };
+export { auth,  getFirestore, firestore, database, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail };

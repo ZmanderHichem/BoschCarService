@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate, useParams, Link  } from 'react-router-dom';
 import { getAuth , onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 
@@ -14,15 +14,28 @@ import About from './components/pages/About/About';
 import ContactUs from './components/pages/contactUs/contactUs';
 import HomeUser from './components/pages/EspaceUser/HomeUser/HomeUser';
 import HomeAdmin from './components/pages/EspaceAdmin/HomeAdmin/HomeAdmin';
+import MesInterventions from './components/pages/EspaceUser/Intervention/MesInterventions';
+import OffreEmploi from './components/pages/EspaceAdmin/Emploi/OffreEmploi';
+
+
 
 import './App.css';
+import IndexHome from './components/pages/IndexHome';
+import { useAuth, AuthProvider  } from './components/pages/AuthContext'; // Adjust the path accordingly
 
 
 
 
 function App() {
+  
   const [user, setUser] = useState(null);
   const [userRole, setUserRole] = useState(null);
+
+
+  const { userEmail } = useParams();
+  console.log('User Email in EspaceUser:', userEmail);
+
+
 
   const auth = getAuth();
 
@@ -71,24 +84,38 @@ function App() {
   }, [auth]);
 
 
-
+  
+  
   return (
     <div className="app">
       <BrowserRouter>
+      <AuthProvider>
+
         <Routes>
-          <Route path="/" element={<Home />} />
+
+          <Route path="/" element={<IndexHome />} />
+          <Route path="/Home" element={<Home/>} />
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/admin" element={<LesInterventions />} />
+          <Route path="/LesInterventions" element={<LesInterventions />} />
           <Route path="/RendezVous" element={<RendezVous />} />
           <Route path="/About" element={<About />} />
           <Route path="/LesRendezVous" element={<LesRendezVous />} />
           <Route path="/promos" element={<Promos />} />
           <Route path="/ajouterService" element={<AjouterService />} />
-          <Route path="/HomeUser" element={<Navigate to={userRole === 'client' ? '/HomeUser' : '/'} />} />
-          <Route path="/HomeAdmin" element={<Navigate to={userRole === 'admin' ? '/HomeAdmin' : '/'} />} />
+          <Route path="/HomeUser" element={<HomeUser />} />
+          <Route path="/MesInterventions/:userEmail" element={<MesInterventions />} />
+          <Route path="/HomeAdmin" element={<HomeAdmin/>} />
+          <Route path="/OffreEmploi" element={<OffreEmploi/>} />
+
+          
+
+
+          
 
         </Routes>
+        </AuthProvider>
+
       </BrowserRouter>
     </div>
   );

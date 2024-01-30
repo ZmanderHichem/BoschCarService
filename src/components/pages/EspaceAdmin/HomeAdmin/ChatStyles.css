@@ -1,0 +1,40 @@
+/* ChatStyles.css */
+.chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-message {
+  align-self: flex-start;
+  background-color: #e6e6e6; /* Couleur de fond pour les messages de l'administrateur */
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 70%;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #007bff; /* Couleur de fond pour les messages de l'utilisateur */
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff; /* Couleur du texte pour les messages de l'utilisateur */
+  max-width: 70%;
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}

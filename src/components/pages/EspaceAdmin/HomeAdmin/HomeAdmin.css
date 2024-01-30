@@ -2,6 +2,7 @@
     background-color: #0a15e3;
     max-height: 25px;
     overflow: hidden; /* Ajout de cette propriété pour cacher le dépassement du contenu */
+    margin-top: 100px;
 }
 
 .scrolling-text {
@@ -14,6 +15,17 @@
     animation: marquee 30s linear infinite;
     display: inline-block; /* Ajout de cette propriété pour permettre le défilement horizontal */
 }
+.chat-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
 
 @keyframes marquee {
     0% {

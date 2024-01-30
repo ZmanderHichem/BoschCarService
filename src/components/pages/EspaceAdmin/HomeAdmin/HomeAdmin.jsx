@@ -6,15 +6,23 @@ import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Carousel, Container } from 'react-bootstrap';
 import './HomeAdmin.css';
+import ContentContainer from '../../ContentContainer/ContentContainer';
+import AdminHeader from '../../Headers/AdminHeader/AdminHeader';
 
-import Header from '../../../Header';
-
+import ChatAdmin from './ChatAdmin';
+import Chat from '../../../../assets/images/chat.png';
 
 
 const storage = getStorage();
 
 const HomeAdmin = () => {
   const [promos, setPromos] = useState([]);
+
+  const [showChat, setShowChat] = useState(false);
+
+  const toggleChat = () => {
+    setShowChat(!showChat);
+  };
 
   useEffect(() => {
     const fetchPromos = async () => {
@@ -27,28 +35,40 @@ const HomeAdmin = () => {
     fetchPromos();
   }, []);
 
-  return (
-    <Container>
-         <Header />
+  const [offresEmploi, setOffresEmploi] = useState([]);
 
-    
-      <div className="container">
-        <div className="container">
-          <Carousel>
-            {promos.map((promo, index) => (
-              <Carousel.Item key={index}>
-                <img
-                  className="d-block w-100"
-                  src={promo.imageURL}
-                  alt={`Promo ${index + 1}`}
-                />
-              </Carousel.Item>
-            ))}
-          </Carousel>
-        </div>
-      </div>
-      </Container>  
-      );
+  useEffect(() => {
+    const fetchOffresEmploi = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(firestore, 'offresEmploi'));
+        const offres = [];
+        querySnapshot.forEach((doc) => {
+          offres.push({ id: doc.id, ...doc.data() });
+        });
+        setOffresEmploi(offres);
+      } catch (error) {
+        console.error('Error fetching offers:', error);
+      }
+    };
+
+    fetchOffresEmploi();
+  }, []);
+
+  
+
+  return (
+    <>
+      <AdminHeader />
+      <ContentContainer promos={promos} offresEmploi={offresEmploi} />
+      
+      <button className="chat-toggle-btn" onClick={toggleChat}>
+      <img src={Chat} alt="Chat Icon" style={{ maxWidth: '30px', height: '30px' }} />
+</button>
+{showChat && <ChatAdmin userRole="admin" />}
+
+    </>
+  );
 };
+
 
 export default HomeAdmin;

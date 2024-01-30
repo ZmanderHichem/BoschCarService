@@ -4,7 +4,7 @@ import './About.css'; // Assurez-vous d'importer le fichier CSS
 import about1 from '../../../assets/images/about1.jpg';
 import about2 from '../../../assets/images/about2.jpg';
 import about3 from '../../../assets/images/about3.jpg';
-import Header from '../../Header';
+import Header from '../Headers/Header';
 
 const About = () => {
   const [imageOnLeft, setImageOnLeft] = useState(true);

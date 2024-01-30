@@ -11,7 +11,10 @@ body {
     }
     
     .header {
-      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       justify-content: space-between;
       align-items: center;
       padding: 10px;
@@ -97,6 +100,7 @@ body {
     .App-link {
       color: #61dafb;
     }
+    
     
     @keyframes App-logo-spin {
       from {

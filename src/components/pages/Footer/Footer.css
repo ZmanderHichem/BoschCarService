@@ -1,0 +1,31 @@
+
+footer {
+    background-color: #1a237e; /* Couleur bleu foncé (peut être ajustée) */
+    color: #ffffff; /* Couleur du texte */
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .footer-section {
+    margin-right: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+  }
+  

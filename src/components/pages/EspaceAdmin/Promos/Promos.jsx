@@ -5,7 +5,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL, getMetadata, deleteObject
 import { addDoc, collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { firestore, storage } from '../../../../firebase/configFirebase';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import Header from '../../../Header';
+import AdminHeader from '../../Headers/AdminHeader/AdminHeader';
 
 const Promos = () => {
   const [promoImage, setPromoImage] = useState(null);
@@ -61,7 +61,7 @@ const Promos = () => {
 
   return (
     <div>
-            <Header />
+            <AdminHeader />
 
 
       <div>

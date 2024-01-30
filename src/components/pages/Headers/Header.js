@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom'; // Assuming you're using react-router
-import logo from '../assets/images/bosch.jpg';
+import logo from '../../../assets/images/bosch.jpg';
 
 import './Header.css';
 const Header = () => {

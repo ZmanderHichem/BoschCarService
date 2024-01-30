@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../../../../firebase/configFirebase';
-import Header from '../../../Header';
+import AdminHeader from '../../Headers/AdminHeader/AdminHeader';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import Promos from '../Promos/Promos';
 
@@ -45,7 +45,7 @@ const LesInterventions = () => {
   
     return (
       <div>
-               <Header />
+               <AdminHeader />
 
 
 
