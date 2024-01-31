@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { ref, onValue, push, serverTimestamp, off } from 'firebase/database';
 import { database } from '../../../../firebase/configFirebase';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { firestore } from '../../../../firebase/configFirebase';
 import './ChatStyles.css';
 
 const Chat = ({ userRole }) => {
   const [messages, setMessages] = useState([]);
+  const [userName, setUserName] = useState('');
 
   useEffect(() => {
     const chatRef = ref(database, 'Chat');
@@ -13,7 +16,7 @@ const Chat = ({ userRole }) => {
       if (data) {
         const messagesArray = Object.values(data);
         setMessages(messagesArray);
-      } else {
+           } else {
         setMessages([]);
       }
     };
@@ -24,6 +27,18 @@ const Chat = ({ userRole }) => {
       off(chatRef, 'value', callback);
     };
   }, []);
+
+  useEffect(() => {
+    const getUserName = async () => {
+      const q = query(collection(firestore, 'users'), where('uid', '==', userRole));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        setUserName(doc.data().name);
+      });
+    };
+
+    getUserName();
+  }, [userRole]);
 
   const sendMessage = () => {
     const chatRef = ref(database, 'Chat');
@@ -43,7 +58,7 @@ const Chat = ({ userRole }) => {
   return (
     <div className="chat-container">
       <div>
-        <h2>Espace {userRole === 'admin' ? 'Admin' : 'User'}</h2>
+        <h2>Espace {userName}</h2>
       </div>
       <div className="chat-messages">
         {messages.map((message, index) => (
@@ -68,4 +83,4 @@ const Chat = ({ userRole }) => {
   );
 };
 
-export default Chat;
+export default Chat; 

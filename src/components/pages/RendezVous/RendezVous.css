@@ -10,12 +10,12 @@
     margin-bottom: 8px;
   }
   
-  input {
+  /* input {
     margin-bottom: 16px;
     padding: 8px;
-  }
+  } */
   
-  button {
+  /* button {
     background-color: #2e3192;
     color: #fff;
     padding: 10px;
@@ -24,7 +24,7 @@
   
   button:hover {
     background-color: #f58220;
-  }
+  } */
   
   h2{
     color: white;

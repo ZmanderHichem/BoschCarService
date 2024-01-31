@@ -1,4 +1,99 @@
-#loginForm {
+
+
+/* .formContainer {
+  background-color: #a7bcff;
+  height: 300PX;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15%;
+} */
+
+  .formWrapper {
+    margin: 10% auto;
+    max-width: 400px;
+    background-color: white;
+
+    padding: 20px 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+ 
+  }
+    .title {
+      color: #5d5b8d;
+      font-size: 15px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+      input {
+        padding: 5px;
+        border: none;
+        margin: 0 auto;
+        width: 110%;
+        border-bottom: 1px solid #a7bcff;
+        &::placeholder {
+          color: rgb(175, 175, 175);
+        }
+      }
+
+      button {
+        margin: 0 auto;
+        background-color: #7b96ec;
+        color: white;
+        padding: 10px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #8da4f1;
+        font-size: 12px;
+        cursor: pointer;
+      }
+       
+    
+   
+    p {
+      color: #5d5b8d;
+      font-size: 12px;
+
+      
+      margin-top: 10px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #loginForm {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,63 +137,65 @@ button:hover {
   background-color: #003366;
 }
 
-/* Your existing styles for the login page */
+/* Styles pour le modal/signup */
+/* .ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent en arrière-plan du modal */
 
-/* Add the modal styles below */
 
-/* Styles for the modal */
-.modal {
-  position: fixed;
+/*.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content {
+  position: flex;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 20px;
+  transform: translate(-50%, -50%); 
+  background-color: #149acb; /* Couleur de fond blanche pour le modal */
+  /*padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-  width: 100%;
-  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 250px; /* Ajustez la largeur du modal selon vos besoins */
+ /*width: 100%;
+} 
+
+/* Styles spécifiques pour le formulaire dans le modal */
+/* Ajoutez ces styles pour centrer le formulaire sur la page */
+/* #signupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Styles for the form fields */
-.modal label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
+#signupForm label {
+  margin-bottom: 50px;
 }
 
-.modal input {
+#signupForm input {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-bottom: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
 }
 
-.modal button {
+#signupForm button {
   background-color: #4caf50;
   color: #fff;
-  padding: 10px 20px;
+  padding: 12px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-.modal button:hover {
+#signupForm button:hover {
   background-color: #45a049;
 }
 
-/* Optional: Close button style */
-.modal .close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #f44336;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  padding: 8px;
- 
-}
+  */ 

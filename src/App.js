@@ -16,7 +16,7 @@ import HomeUser from './components/pages/EspaceUser/HomeUser/HomeUser';
 import HomeAdmin from './components/pages/EspaceAdmin/HomeAdmin/HomeAdmin';
 import MesInterventions from './components/pages/EspaceUser/Intervention/MesInterventions';
 import OffreEmploi from './components/pages/EspaceAdmin/Emploi/OffreEmploi';
-
+import Register from './components/pages/pages/Register';
 
 
 import './App.css';
@@ -97,6 +97,7 @@ function App() {
           <Route path="/Home" element={<Home/>} />
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/login" element={<Login />} />
+          <Route path="register" element={<Register />} />
           <Route path="/LesInterventions" element={<LesInterventions />} />
           <Route path="/RendezVous" element={<RendezVous />} />
           <Route path="/About" element={<About />} />
