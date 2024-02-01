@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { onAuthStateChanged, getAuth } from 'firebase/auth';
 import { useAuth } from './AuthContext';
-import './IndexHome.css';
 const IndexHome = () => {
   const { userEmail } = useAuth();
   const navigate = useNavigate();
