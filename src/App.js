@@ -17,11 +17,10 @@ import HomeAdmin from './components/pages/EspaceAdmin/HomeAdmin/HomeAdmin';
 import MesInterventions from './components/pages/EspaceUser/Intervention/MesInterventions';
 import OffreEmploi from './components/pages/EspaceAdmin/Emploi/OffreEmploi';
 import Register from './components/pages/pages/Register';
-
+import AdminChat from './components/pages/EspaceAdmin/ChatAdmin/AdminChat';
 
 import './App.css';
 import IndexHome from './components/pages/IndexHome';
-import { useAuth, AuthProvider  } from './components/pages/AuthContext'; // Adjust the path accordingly
 
 
 
@@ -40,11 +39,11 @@ function App() {
   const auth = getAuth();
 
   const getUserRole = async (userId) => {
-    const db = getFirestore();
+    const firestore = getFirestore();
 
     try {
       console.log('Fetching user document for user ID:', userId);
-      const userDoc = await getDoc(doc(db, 'users', userId));
+      const userDoc = await getDoc(doc(firestore, 'users', userId));
 
       if (userDoc.exists()) {
         console.log('User document found:', userDoc.data());
@@ -89,7 +88,6 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
-      <AuthProvider>
 
         <Routes>
 
@@ -108,6 +106,7 @@ function App() {
           <Route path="/MesInterventions/:userEmail" element={<MesInterventions />} />
           <Route path="/HomeAdmin" element={<HomeAdmin/>} />
           <Route path="/OffreEmploi" element={<OffreEmploi/>} />
+          <Route path="/AdminChat" element={<AdminChat/>} />
 
           
 
@@ -115,7 +114,6 @@ function App() {
           
 
         </Routes>
-        </AuthProvider>
 
       </BrowserRouter>
     </div>

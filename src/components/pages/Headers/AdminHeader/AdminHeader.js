@@ -52,6 +52,11 @@ const AdminHeader = () => {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/AdminChat">
+                AdminChat
+                </Link>
+              </li>
+              <li className="nav-item">
               <button className="nav-link" onClick={handleSignOut}>
                 Se déconnecter
               </button>

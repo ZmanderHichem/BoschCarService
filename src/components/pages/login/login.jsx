@@ -3,11 +3,10 @@ import { Navigate, Link, useNavigate  } from 'react-router-dom';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged } from 'firebase/auth';
 import { firestore } from '../../../firebase/configFirebase';
-import Modal from 'react-modal';
 
 import './Login.css';
 import Header from '../Headers/Header';
-import { useAuth } from '../AuthContext';
+// import { useAuth } from '../AuthContext';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -15,7 +14,7 @@ const Login = () => {
   const [user, setUser] = useState(null);
   const [redirectTo, setRedirectTo] = useState(null);
   const [userRole, setUserRole] = useState(null);
-  const { updateUserEmail } = useAuth();
+  // const { updateUserEmail } = useAuth();
   const auth = getAuth();
   const [err, setErr] = useState(false);
   const navigate = useNavigate();
@@ -30,7 +29,7 @@ const Login = () => {
       const user = auth.currentUser;
       const userId = user.uid;
       const userRole = await getUserRole(userId);
-      updateUserEmail(user.email);
+      // updateUserEmail(user.email);
 
       navigate("/");
     } catch (err) {

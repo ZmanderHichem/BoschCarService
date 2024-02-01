@@ -10,8 +10,8 @@ import {
   serverTimestamp,
   getDoc,
 } from "firebase/firestore";
-import { db } from "../firebase";
-import { AuthContext } from "../context/AuthContext";
+import { firestore } from "../../../../../firebase/configFirebase";
+import { AuthContext } from "../../../AuthContext";
 const Search = () => {
   const [username, setUsername] = useState("");
   const [user, setUser] = useState(null);
@@ -21,7 +21,7 @@ const Search = () => {
 
   const handleSearch = async () => {
     const q = query(
-      collection(db, "users"),
+      collection(firestore, "users"),
       where("displayName", "==", username)
     );
 
@@ -46,14 +46,14 @@ const Search = () => {
         ? currentUser.uid + user.uid
         : user.uid + currentUser.uid;
     try {
-      const res = await getDoc(doc(db, "chats", combinedId));
+      const res = await getDoc(doc(firestore, "chats", combinedId));
 
       if (!res.exists()) {
         //create a chat in chats collection
-        await setDoc(doc(db, "chats", combinedId), { messages: [] });
+        await setDoc(doc(firestore, "chats", combinedId), { messages: [] });
 
         //create user chats
-        await updateDoc(doc(db, "userChats", currentUser.uid), {
+        await updateDoc(doc(firestore, "userChats", currentUser.uid), {
           [combinedId + ".userInfo"]: {
             uid: user.uid,
             displayName: user.displayName,
@@ -62,7 +62,7 @@ const Search = () => {
           [combinedId + ".date"]: serverTimestamp(),
         });
 
-        await updateDoc(doc(db, "userChats", user.uid), {
+        await updateDoc(doc(firestore, "userChats", user.uid), {
           [combinedId + ".userInfo"]: {
             uid: currentUser.uid,
             displayName: currentUser.displayName,
